@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0D1117" />
+<title>Samuel Eziuzor — Data Analyst & AI Professional</title>
+<meta name="description" content="Samuel Eziuzor — Data Analyst & AI Professional. SQL, Python, Power BI, Excel and data storytelling. Selected projects, skills and contact." />
+
+<!--
+  ============================================================
+  HOW TO EDIT THIS SITE
+  ------------------------------------------------------------
+  Almost everything on this page (name, bio, projects, skills,
+  experience, links) is generated from plain JavaScript objects
+  near the top of the <script> tag at the bottom of this file.
+
+  Look for the block that starts with:
+
+      /* ============ EDIT YOUR CONTENT HERE ============ */
+
+  Change the values inside PROFILE, METRICS, SKILLS, PROJECTS
+  and EXPERIENCE — the page will update automatically.
+  To add a new project, copy one project object inside the
+  PROJECTS array and edit the copy. No HTML/CSS knowledge needed.
+  ============================================================
+-->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230D1117'/%3E%3Cg fill='none' stroke='%23F2B544' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M5 17V10'/%3E%3Cpath d='M12 17V7'/%3E%3Cpath d='M19 17V13'/%3E%3C/g%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root{
+  --bg:#0D1117;
+  --bg-soft:#10141D;
+  --surface:#151B26;
+  --surface-2:#1B2230;
+  --border:#232B3D;
+  --text:#E8EAED;
+  --text-muted:#8B94A7;
+  --text-faint:#5A6377;
+
+  --accent:#F2B544;       /* amber — highlight / insight */
+  --accent-rgb:242,181,68;
+  --accent-2:#5FB6E0;     /* blue — chart / keyword */
+  --accent-2-rgb:95,182,224;
+  --positive:#7BD9A5;     /* green — result / diff-add */
+
+  --font-display:'Space Grotesk', sans-serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'JetBrains Mono', monospace;
+
+  --radius:10px;
+  --radius-lg:18px;
+  --container:1200px;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+input,textarea{font:inherit;color:inherit;}
+::selection{background:rgba(var(--accent-rgb),.25);}
+
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 1.5rem;}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;}
+.accent-text{color:var(--accent);}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  color:var(--accent-2);
+  letter-spacing:.04em;
+  margin-bottom:.85rem;
+}
+
+/* faint dot-grid backdrop, evokes graph paper / spreadsheet */
+.grid-overlay{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.2) 70%, transparent);
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.2) 70%, transparent);
+}
+
+/* =========================================================
+   REVEAL / MOTION
+   ========================================================= */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.is-visible{opacity:1;transform:none;}
+
+@keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(123,217,165,.55);}
+  70%{box-shadow:0 0 0 6px rgba(123,217,165,0);}
+  100%{box-shadow:0 0 0 0 rgba(123,217,165,0);}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  *{animation:none !important;transition-duration:.01ms !important;}
+}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid transparent;
+  background:rgba(13,17,23,.55);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  transition:border-color .3s var(--ease), background .3s var(--ease);
+}
+.nav.scrolled{
+  border-bottom-color:var(--border);
+  background:rgba(13,17,23,.85);
+}
+.nav__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 1.5rem;
+}
+.nav__logo{
+  font-family:var(--font-mono);
+  font-size:.95rem;
+  font-weight:500;
+  color:var(--text);
+}
+.nav__logo span.accent-text{color:var(--accent);}
+.cursor{color:var(--accent);animation:blink 1.1s step-end infinite;}
+
+.nav__links{
+  display:flex;gap:2rem;
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  letter-spacing:.03em;
+}
+.nav__links a{color:var(--text-muted);transition:color .2s var(--ease);position:relative;}
+.nav__links a::after{
+  content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:var(--accent);transition:width .25s var(--ease);
+}
+.nav__links a:hover{color:var(--text);}
+.nav__links a:hover::after{width:100%;}
+
+.nav__right{display:flex;align-items:center;gap:1.25rem;}
+
+.status-pill{
+  display:flex;align-items:center;gap:.5rem;
+  font-family:var(--font-mono);font-size:.75rem;color:var(--text-muted);
+  border:1px solid var(--border);border-radius:999px;
+  padding:.35rem .75rem;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--positive);display:inline-block;}
+.dot--pulse{animation:pulse 2s infinite;}
+.dot--red{background:#E8728A;}
+.dot--yellow{background:var(--accent);}
+.dot--green{background:var(--positive);}
+
+.nav__toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:34px;height:34px;
+}
+.nav__toggle span{display:block;width:20px;height:2px;background:var(--text);transition:transform .25s var(--ease), opacity .25s var(--ease);}
+.nav--open .nav__toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav--open .nav__toggle span:nth-child(2){opacity:0;}
+.nav--open .nav__toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--font-mono);font-size:.85rem;font-weight:500;
+  padding:.85rem 1.4rem;border-radius:var(--radius);
+  border:1px solid transparent;
+  transition:transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+}
+.btn--primary{background:var(--accent);color:#1A1304;}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(var(--accent-rgb),.55);}
+.btn--ghost{border-color:var(--border);color:var(--text);}
+.btn--ghost:hover{border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);}
+.btn svg{width:16px;height:16px;}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:3.5rem;
+  align-items:center;
+  min-height:calc(100vh - 70px);
+  padding-top:2.5rem;padding-bottom:3rem;
+}
+.hero__title{
+  font-size:clamp(2.4rem, 5.2vw, 4rem);
+  line-height:1.12;
+  margin:.4rem 0 1.2rem;
+}
+.hero__lead{color:var(--text-muted);max-width:46ch;font-size:1.05rem;margin-bottom:1.8rem;}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.8rem;}
+.hero__socials{display:flex;gap:1rem;}
+.hero__socials a{
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border);border-radius:var(--radius);color:var(--text-muted);
+  transition:color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.hero__socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
+.hero__socials svg{width:18px;height:18px;}
+
+/* console card */
+.console{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.6), 0 0 0 1px rgba(var(--accent-rgb),.04);
+}
+.console__bar{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.85rem 1rem;border-bottom:1px solid var(--border);
+  background:var(--surface-2);
+}
+.console__bar .dot{width:11px;height:11px;}
+.console__title{
+  margin-left:.75rem;font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);
+}
+.console__body{padding:1.5rem;font-family:var(--font-mono);font-size:.85rem;}
+.console__query{margin-bottom:1rem;}
+.console__line{
+  white-space:pre;color:var(--text);line-height:1.9;
+  opacity:0;transform:translateX(-10px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.console__line.is-visible{opacity:1;transform:none;}
+.tok-kw{color:var(--accent-2);}
+.tok-str{color:var(--positive);}
+.console__meta{
+  color:var(--text-faint);margin:.75rem 0 1rem;font-size:.78rem;
+  opacity:0;transition:opacity .5s var(--ease);
+}
+.console__meta.is-visible{opacity:1;}
+.console__result{display:flex;flex-direction:column;gap:.45rem;}
+.console__row{
+  display:grid;grid-template-columns:90px 1fr;gap:.75rem;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.console__row.is-visible{opacity:1;transform:none;}
+.console__row dt{color:var(--text-faint);}
+.console__row dd{color:var(--text);}
+.console__status{display:inline-flex;align-items:center;gap:.5rem;color:var(--positive);}
+
+/* =========================================================
+   SECTION HEADS
+   ========================================================= */
+section{padding:5.5rem 0;}
+.section-head{max-width:60ch;margin-bottom:3rem;}
+.section-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.6rem;}
+.section-sub{color:var(--text-muted);}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about__grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start;}
+.about__text p{color:var(--text-muted);margin-bottom:1.1rem;max-width:58ch;}
+.about__text p:last-child{margin-bottom:0;}
+.about__meta{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:1.5rem 1.6rem;font-family:var(--font-mono);font-size:.85rem;
+}
+.meta__class{color:var(--accent-2);margin-bottom:1rem;}
+.about__meta dl{display:flex;flex-direction:column;gap:.7rem;}
+.about__meta .row{display:grid;grid-template-columns:110px 1fr;gap:.75rem;}
+.about__meta dt{color:var(--text-faint);}
+.about__meta dd{color:var(--text);}
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+.metrics__grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;background:var(--border);gap:1px;
+}
+.metric{background:var(--surface);padding:2.2rem 1.5rem;text-align:center;}
+.metric__value{
+  font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--accent);
+}
+.metric__label{
+  margin-top:.5rem;font-family:var(--font-mono);font-size:.75rem;color:var(--text-muted);
+  letter-spacing:.04em;text-transform:uppercase;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+.skills__groups{display:flex;flex-direction:column;gap:2.4rem;}
+.skill-group__head{
+  display:flex;align-items:baseline;gap:.75rem;margin-bottom:1.1rem;
+  font-family:var(--font-mono);
+}
+.skill-group__head h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;}
+.skill-group__code{color:var(--text-faint);font-size:.78rem;}
+.skill-row{display:flex;flex-wrap:wrap;gap:.9rem;}
+.skill-chip{
+  flex:1 1 160px;max-width:220px;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:.85rem 1rem;display:flex;flex-direction:column;gap:.6rem;
+  transition:border-color .2s var(--ease), transform .2s var(--ease);
+}
+.skill-chip:hover{border-color:var(--accent-2);transform:translateY(-2px);}
+.skill-chip__name{font-size:.88rem;font-weight:500;}
+.skill-bar{height:4px;border-radius:999px;background:var(--border);overflow:hidden;}
+.skill-bar__fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent-2),var(--accent));width:0%;transition:width 1s var(--ease);}
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+.projects__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.project-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:1.6rem;display:flex;flex-direction:column;gap:1rem;
+  transition:transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.project-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(var(--accent-2-rgb),.45);
+  box-shadow:0 20px 40px -25px rgba(0,0,0,.7);
+}
+.project-card__top{display:flex;align-items:center;justify-content:space-between;}
+.project-card__index{font-family:var(--font-mono);font-size:.78rem;color:var(--accent-2);}
+.tag{
+  font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);
+  border:1px solid var(--border);border-radius:999px;padding:.25rem .65rem;
+}
+.project-card h3{font-size:1.18rem;line-height:1.35;}
+.project-card p{color:var(--text-muted);font-size:.92rem;}
+.project-card__tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.project-card hr{border:none;border-top:1px dashed var(--border);}
+.project-card__out{
+  font-family:var(--font-mono);font-size:.85rem;color:var(--positive);
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+.project-card__out span.label{color:var(--text-faint);}
+.project-card__links{display:flex;gap:1.25rem;margin-top:auto;}
+.project-card__links a{
+  display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);
+  font-size:.8rem;color:var(--text-muted);transition:color .2s var(--ease);
+}
+.project-card__links a:hover{color:var(--accent);}
+.project-card__links svg{width:14px;height:14px;}
+
+/* =========================================================
+   EXPERIENCE / TIMELINE
+   ========================================================= */
+.timeline{position:relative;padding-left:2.2rem;border-left:2px solid var(--border);}
+.timeline__item{position:relative;padding-bottom:2.6rem;}
+.timeline__item:last-child{padding-bottom:0;}
+.timeline__dot{
+  position:absolute;left:-2.45rem;top:.35rem;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--accent);
+}
+.timeline__version{
+  font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-bottom:.4rem;display:block;
+}
+.timeline__head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;margin-bottom:.6rem;}
+.timeline__head h3{font-size:1.15rem;}
+.timeline__period{font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);}
+.timeline__company{color:var(--accent-2);font-size:.9rem;margin-bottom:.6rem;}
+.timeline__points{display:flex;flex-direction:column;gap:.4rem;}
+.timeline__points li{
+  font-size:.92rem;color:var(--text-muted);display:flex;gap:.6rem;
+}
+.timeline__points li::before{content:"+";color:var(--positive);font-family:var(--font-mono);font-weight:600;}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.contact__intro h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.9rem;}
+.contact__intro p{color:var(--text-muted);max-width:48ch;margin-bottom:1.6rem;}
+.contact__headers{
+  font-family:var(--font-mono);font-size:.85rem;
+  display:flex;flex-direction:column;gap:.6rem;
+  border-top:1px dashed var(--border);padding-top:1.2rem;
+}
+.contact__headers .row{display:grid;grid-template-columns:90px 1fr;gap:.75rem;}
+.contact__headers dt{color:var(--text-faint);}
+.contact__headers dd a{color:var(--accent-2);transition:color .2s var(--ease);}
+.contact__headers dd a:hover{color:var(--accent);}
+
+.contact__form{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.form__bar{
+  font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);
+  padding:.85rem 1.25rem;border-bottom:1px solid var(--border);background:var(--surface-2);
+}
+.form__body{padding:1.5rem;display:flex;flex-direction:column;gap:1.1rem;}
+.field label{
+  display:block;font-family:var(--font-mono);font-size:.75rem;color:var(--text-faint);
+  margin-bottom:.5rem;letter-spacing:.04em;
+}
+.field input,.field textarea{
+  width:100%;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);
+  padding:.75rem .9rem;font-size:.92rem;transition:border-color .2s var(--ease);
+}
+.field textarea{min-height:120px;resize:vertical;}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent-2);}
+.form__note{font-family:var(--font-mono);font-size:.74rem;color:var(--text-faint);}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{border-top:1px solid var(--border);padding:2.2rem 0;}
+.footer__inner{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+  font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);
+}
+.back-to-top{color:var(--text-muted);transition:color .2s var(--ease);}
+.back-to-top:hover{color:var(--accent);}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:2rem;gap:2.5rem;}
+  .hero__console{order:-1;}
+  .about__grid{grid-template-columns:1fr;}
+  .contact__grid{grid-template-columns:1fr;}
+  .metrics__grid{grid-template-columns:repeat(2,1fr);}
+  .nav__links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:1.25rem;
+    background:rgba(13,17,23,.97);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    padding:1.5rem 1.5rem;
+    max-height:0;overflow:hidden;
+    transition:max-height .3s var(--ease), padding .3s var(--ease);
+  }
+  .nav--open .nav__links{max-height:300px;padding:1.5rem 1.5rem;}
+  .nav__toggle{display:flex;}
+  .status-pill{display:none;}
+}
+@media (max-width:640px){
+  section{padding:3.5rem 0;}
+  .metrics__grid{grid-template-columns:repeat(2,1fr);}
+  .console__body{font-size:.76rem;}
+  .console__row{grid-template-columns:80px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__logo">~/<span id="nav-handle">alex.morgan</span><span class="cursor">_</span></a>
+    <nav class="nav__links" id="nav-links">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <div class="nav__right">
+      <span class="status-pill" id="status-pill"><span class="dot dot--pulse"></span><span id="status-text">available for work</span></span>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero container" id="hero">
+    <div class="hero__content">
+      <p class="eyebrow reveal" id="hero-eyebrow">// data analyst — based in lagos, ng</p>
+      <h1 class="hero__title reveal" id="hero-title">Hi, I'm <span class="accent-text">Samuel</span> — turning raw data into decisions that move the business.</h1>
+      <p class="hero__lead reveal" id="hero-lead"></p>
+      <div class="hero__actions reveal">
+        <a href="#projects" class="btn btn--primary">View projects</a>
+        <a href="#" id="resume-link" class="btn btn--ghost" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+          Download résumé
+        </a>
+      </div>
+      <div class="hero__socials reveal" id="hero-socials"></div>
+    </div>
+
+    <div class="hero__console reveal">
+      <div class="console">
+        <div class="console__bar">
+          <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+          <span class="console__title">query.sql</span>
+        </div>
+        <div class="console__body">
+          <div class="console__query" id="console-query"></div>
+          <p class="console__meta" id="console-meta">-- 1 row returned in 12ms</p>
+          <div class="console__result" id="console-result"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about container" id="about">
+    <div class="section-head reveal">
+      <p class="eyebrow">// about</p>
+      <h2>Profile</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__text reveal" id="about-text"></div>
+      <div class="about__meta reveal">
+        <p class="meta__class">&lt;class 'Analyst'&gt;</p>
+        <dl id="about-meta-list"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METRICS ============ -->
+  <section class="metrics container" id="metrics">
+    <div class="metrics__grid" id="metrics-grid"></div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills container" id="skills">
+    <div class="section-head reveal">
+      <p class="eyebrow">// skills</p>
+      <h2>Tools of the trade</h2>
+      <p class="section-sub">Proficiency mapped from hands-on project work, scored 1–5.</p>
+    </div>
+    <div class="skills__groups" id="skills-groups"></div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects container" id="projects">
+    <div class="section-head reveal">
+      <p class="eyebrow">// projects</p>
+      <h2>Selected work</h2>
+      <p class="section-sub">A running notebook of problems solved with data. New cells get added as the work continues.</p>
+    </div>
+    <div class="projects__grid" id="projects-grid"></div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="experience container" id="experience">
+    <div class="section-head reveal">
+      <p class="eyebrow">// experience</p>
+      <h2>Changelog</h2>
+      <p class="section-sub">Self-directed analytics work and continuous skill development.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact container" id="contact">
+    <div class="contact__grid">
+      <div class="contact__intro reveal">
+        <p class="eyebrow">// contact</p>
+        <h2>Let's talk data.</h2>
+        <p>Have a dataset that needs a story, a dashboard that needs rebuilding, or a role to fill? Send a message — happy to take a look.</p>
+        <dl class="contact__headers" id="contact-headers"></dl>
+      </div>
+
+      <form class="contact__form reveal" id="contact-form" action="https://formsubmit.co/samueleziuzor11@gmail.com" method="POST">
+        <!-- FormSubmit config: replace REPLACE_WITH_EMAIL@example.com above with a real email.
+             The first submission will trigger a one-time confirmation email from FormSubmit. -->
+        <input type="hidden" name="_subject" value="New portfolio message" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form__bar">POST /contact</div>
+        <div class="form__body">
+          <div class="field">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="field">
+            <label for="message">message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="justify-content:center;">
+            send message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note">Or skip the form — email goes straight to my inbox either way.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> <span id="footer-name"></span> · built with data, curiosity and a lot of coffee.</p>
+    <a href="#top" class="back-to-top">↑ back to top</a>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   EDIT YOUR CONTENT HERE
+   Everything below describes the person, projects, skills
+   and experience shown on the page. Edit freely — the page
+   re-renders automatically from these objects.
+   ========================================================= */
+
+const ICONS = {
+  github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.06c0 5.06 3.29 9.35 7.86 10.86.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.7.42.36.78 1.07.78 2.16 0 1.56-.01 2.8-.01 3.18 0 .3.21.66.79.55A10.6 10.6 0 0 0 23.5 12.06C23.5 5.74 18.27.5 12 .5z"/></svg>`,
+  linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>`,
+  mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg>`,
+  twitter: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2.25h3.07l-6.7 7.66 7.88 10.84h-6.17l-4.83-6.4-5.53 6.4H3.55l7.17-8.2-7.56-10.3h6.32l4.36 5.84 5.06-5.84zm-1.08 16.7h1.7L7.27 4.2H5.45l12.37 14.75z"/></svg>`,
+  external: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>`,
+};
+
+const PROFILE = {
+  name: "Samuel Eziuzor",
+  handle: "samuel.eziuzor",
+  role: "Data Analyst | AI Professional",
+  location: "Lagos, Nigeria",
+  eyebrow: "// data analyst & ai professional — based in lagos, ng",
+  lead: "Turning raw data into business decisions through SQL, Power BI, Python and Excel.",
+  bio: [
+    "I'm a data analyst and AI professional who thrives on transforming messy, disconnected data into clear insights that drive real business decisions. From writing the SQL query that finally answers the hard question to building the Power BI dashboard that leadership opens every morning — I close the gap between raw data and action.",
+    "My work spans the full analytics workflow: cleaning and structuring data, performing exploratory analysis, modeling for insights, and communicating findings to stakeholders at every level. I pair strong technical skills with business problem analysis and the communication to make data make sense to anyone in the room."
+  ],
+  email: "samueleziuzor11@gmail.com",
+  github: "https://github.com/SamuelEziuzor",
+  linkedin: "https://www.linkedin.com/in/samueleziuzor0",
+  twitter: "https://x.com/samueleziuzor",
+  resumeUrl: "#",
+  status: "available",
+  focus: "data → decisions",
+  stack: "SQL · Python · Power BI · Excel",
+  education: "Data Analytics & AI",
+  languages: "English"
+};
+
+// Stat strip — edit values, suffixes and labels freely
+const METRICS = [
+  { value: 4,  suffix: "+", label: "End-to-end projects" },
+  { value: 99, suffix: "k+", label: "Records analyzed" },
+  { value: 4,  suffix: "",  label: "Core tools mastered" },
+  { value: 100, suffix: "%", label: "Open to opportunities" }
+];
+
+// Skill groups — level is 1 to 5
+const SKILLS = [
+  {
+    category: "Data & SQL",
+    code: "SQL_01",
+    items: [
+      { name: "SQL (MySQL)", level: 5 },
+      { name: "Data Cleaning", level: 5 },
+      { name: "Data Modeling", level: 4 },
+      { name: "Excel / Power Query", level: 5 }
+    ]
+  },
+  {
+    category: "Analysis & Python",
+    code: "PY_02",
+    items: [
+      { name: "Python (pandas)", level: 4 },
+      { name: "Exploratory Analysis", level: 5 },
+      { name: "matplotlib / seaborn", level: 4 },
+      { name: "Statistical Analysis", level: 4 }
+    ]
+  },
+  {
+    category: "Visualization & BI",
+    code: "VIZ_03",
+    items: [
+      { name: "Power BI", level: 5 },
+      { name: "Tableau", level: 3 },
+      { name: "Azure", level: 3 },
+      { name: "Dashboard Design", level: 5 }
+    ]
+  },
+  {
+    category: "Business & Communication",
+    code: "BIZ_04",
+    items: [
+      { name: "Stakeholder Communication", level: 5 },
+      { name: "Business Problem Analysis", level: 5 },
+      { name: "Data Storytelling", level: 4 },
+      { name: "Git & GitHub", level: 4 }
+    ]
+  }
+];
+
+// Projects — duplicate an object and edit it to add a new case study.
+// "result" is the headline outcome shown as Out[xx]:
+const PROJECTS = [
+  {
+    id: "01",
+    category: "Sales Analytics",
+    title: "End-to-End Sales Analytics",
+    description: "A complete sales analytics pipeline using Excel for data cleaning, SQL for querying and aggregating business insights, and Power BI for building interactive, stakeholder-ready dashboards.",
+    tools: ["Excel", "SQL", "Power BI"],
+    result: "Full sales intelligence pipeline from raw data to interactive dashboard",
+    demo: "https://github.com/SamuelEziuzor/End-to-End-Sales-Analytics",
+    code: "https://github.com/SamuelEziuzor/End-to-End-Sales-Analytics"
+  },
+  {
+    id: "02",
+    category: "Retail & SQL",
+    title: "Retail Database SQL Analytics",
+    description: "End-to-end retail sales analysis built on a relational database — data modeling, SQL querying for business KPIs, Excel Power Pivot for aggregation, and an interactive summary dashboard.",
+    tools: ["SQL", "Excel", "Power Pivot", "Data Modeling"],
+    result: "Single source of truth for retail KPIs with an interactive dashboard",
+    demo: "https://github.com/SamuelEziuzor/Retail-Database-SQL-Analytics",
+    code: "https://github.com/SamuelEziuzor/Retail-Database-SQL-Analytics"
+  },
+  {
+    id: "03",
+    category: "Python EDA",
+    title: "Brazilian E-Commerce EDA",
+    description: "Exploratory Data Analysis on 99,441 Brazilian e-commerce customer records using Python, uncovering geographic distribution patterns and business growth opportunities across regions.",
+    tools: ["Python", "pandas", "matplotlib", "seaborn"],
+    result: "Geographic and behavioral insights across 99k+ customer records",
+    demo: "https://github.com/SamuelEziuzor/Python-EDA-Brazilian-Ecommerce",
+    code: "https://github.com/SamuelEziuzor/Python-EDA-Brazilian-Ecommerce"
+  },
+  {
+    id: "04",
+    category: "Data Cleaning",
+    title: "SQL Data Cleaning — World Layoffs",
+    description: "Professional SQL data cleaning project on a real-world global layoffs dataset — handling duplicates, NULL values, standardization, and date formatting to produce analysis-ready data.",
+    tools: ["SQL", "MySQL", "Data Cleaning"],
+    result: "Production-ready cleaned dataset from a messy real-world source",
+    demo: "https://github.com/SamuelEziuzor/SQL-Data-Cleaning-World-Layoffs",
+    code: "https://github.com/SamuelEziuzor/SQL-Data-Cleaning-World-Layoffs"
+  }
+];
+
+// Experience — replaced with consulting/self-directed projects section
+const EXPERIENCE = [
+  {
+    version: "v1.0",
+    period: "2024 — Present",
+    role: "Independent Data Analyst",
+    company: "Self-Directed Projects",
+    points: [
+      "Designed and executed end-to-end analytics projects across sales, retail, and e-commerce domains",
+      "Built full pipelines from raw data ingestion through cleaning, SQL modeling, and BI dashboard delivery",
+      "Analyzed over 99,000 real-world records to surface geographic and business growth insights"
+    ]
+  },
+  {
+    version: "v0.1",
+    period: "Ongoing",
+    role: "Continuous Learning",
+    company: "SQL · Python · Power BI · Azure",
+    points: [
+      "Deepening expertise in SQL query optimization, data modeling and database design",
+      "Building Python proficiency for EDA, data wrangling and visualization",
+      "Exploring Azure cloud services and AI tooling for next-generation analytics workflows"
+    ]
+  }
+];
+
+/* =========================================================
+   RENDER LOGIC — usually no need to edit below this line
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ---- NAV ----
+  document.getElementById("nav-handle").textContent = PROFILE.handle;
+  document.getElementById("status-text").textContent = PROFILE.status === "available" ? "available for work" : PROFILE.status;
+  document.getElementById("footer-name").textContent = PROFILE.name;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const nav = document.getElementById("nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 10);
+  });
+
+  const navToggle = document.getElementById("nav-toggle");
+  navToggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("nav--open");
+    navToggle.setAttribute("aria-expanded", open);
+  });
+  document.querySelectorAll(".nav__links a").forEach(a => {
+    a.addEventListener("click", () => nav.classList.remove("nav--open"));
+  });
+
+  // ---- HERO ----
+  document.getElementById("hero-eyebrow").textContent = PROFILE.eyebrow;
+  document.getElementById("hero-lead").textContent = PROFILE.lead;
+  document.getElementById("resume-link").href = PROFILE.resumeUrl;
+
+  const socials = document.getElementById("hero-socials");
+  const socialLinks = [
+    { url: PROFILE.github, icon: ICONS.github, label: "GitHub" },
+    { url: PROFILE.linkedin, icon: ICONS.linkedin, label: "LinkedIn" },
+    { url: PROFILE.twitter, icon: ICONS.twitter, label: "X / Twitter" },
+    { url: `mailto:${PROFILE.email}`, icon: ICONS.mail, label: "Email" }
+  ];
+  socials.innerHTML = socialLinks.map(s =>
+    `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.label}">${s.icon}</a>`
+  ).join("");
+
+  // ---- CONSOLE ----
+  const queryLines = [
+    `<span class="tok-kw">SELECT</span> name, role, focus, stack`,
+    `<span class="tok-kw">FROM</span>   analysts`,
+    `<span class="tok-kw">WHERE</span>  name = <span class="tok-str">'${PROFILE.name}'</span>;`
+  ];
+  const consoleQuery = document.getElementById("console-query");
+  queryLines.forEach(line => {
+    const div = document.createElement("div");
+    div.className = "console__line";
+    div.innerHTML = line;
+    consoleQuery.appendChild(div);
+  });
+
+  const resultRows = [
+    ["name", PROFILE.name],
+    ["role", PROFILE.role],
+    ["focus", PROFILE.focus],
+    ["stack", PROFILE.stack],
+    ["status", `<span class="console__status"><span class="dot dot--pulse"></span>${PROFILE.status}</span>`]
+  ];
+  const consoleResult = document.getElementById("console-result");
+  resultRows.forEach(([k, v]) => {
+    const row = document.createElement("dl");
+    row.className = "console__row";
+    row.innerHTML = `<dt>${k}</dt><dd>${v}</dd>`;
+    consoleResult.appendChild(row);
+  });
+
+  function playConsole() {
+    const lines = document.querySelectorAll(".console__line");
+    const meta = document.getElementById("console-meta");
+    const rows = document.querySelectorAll(".console__row");
+    if (reduceMotion) {
+      lines.forEach(l => l.classList.add("is-visible"));
+      meta.classList.add("is-visible");
+      rows.forEach(r => r.classList.add("is-visible"));
+      return;
+    }
+    lines.forEach((l, i) => setTimeout(() => l.classList.add("is-visible"), 250 * i));
+    setTimeout(() => meta.classList.add("is-visible"), 250 * lines.length + 150);
+    rows.forEach((r, i) => setTimeout(() => r.classList.add("is-visible"), 250 * lines.length + 350 + 120 * i));
+  }
+  playConsole();
+
+  // ---- ABOUT ----
+  const aboutText = document.getElementById("about-text");
+  aboutText.innerHTML = PROFILE.bio.map(p => `<p>${p}</p>`).join("");
+
+  const aboutMeta = [
+    ["location", PROFILE.location],
+    ["focus", PROFILE.focus],
+    ["stack", PROFILE.stack],
+    ["education", PROFILE.education],
+    ["languages", PROFILE.languages],
+    ["status", PROFILE.status]
+  ];
+  document.getElementById("about-meta-list").innerHTML = aboutMeta.map(([k, v]) =>
+    `<div class="row"><dt>${k}</dt><dd>${v}</dd></div>`
+  ).join("");
+
+  // ---- METRICS ----
+  const metricsGrid = document.getElementById("metrics-grid");
+  METRICS.forEach(m => {
+    const el = document.createElement("div");
+    el.className = "metric";
+    el.innerHTML = `<div class="metric__value" data-target="${m.value}" data-suffix="${m.suffix}">0${m.suffix}</div><div class="metric__label">${m.label}</div>`;
+    metricsGrid.appendChild(el);
+  });
+
+  // ---- SKILLS ----
+  const skillsGroups = document.getElementById("skills-groups");
+  SKILLS.forEach(group => {
+    const wrap = document.createElement("div");
+    wrap.className = "skill-group reveal";
+    wrap.innerHTML = `
+      <div class="skill-group__head">
+        <h3>${group.category}</h3>
+        <span class="skill-group__code">${group.code}</span>
+      </div>
+      <div class="skill-row">
+        ${group.items.map(item => `
+          <div class="skill-chip">
+            <span class="skill-chip__name">${item.name}</span>
+            <div class="skill-bar"><div class="skill-bar__fill" data-level="${item.level * 20}"></div></div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+    skillsGroups.appendChild(wrap);
+  });
+
+  // ---- PROJECTS ----
+  const projectsGrid = document.getElementById("projects-grid");
+  PROJECTS.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "project-card reveal";
+    card.innerHTML = `
+      <div class="project-card__top">
+        <span class="project-card__index">In [${p.id}]</span>
+        <span class="tag">${p.category}</span>
+      </div>
+      <h3>${p.title}</h3>
+      <p>${p.description}</p>
+      <div class="project-card__tags">${p.tools.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      <hr/>
+      <div class="project-card__out"><span class="label">Out[${p.id}]:</span><span>${p.result}</span></div>
+      <div class="project-card__links">
+        <a href="${p.demo}" target="_blank" rel="noopener">Case study ${ICONS.external}</a>
+        <a href="${p.code}" target="_blank" rel="noopener">Code ${ICONS.external}</a>
+      </div>
+    `;
+    projectsGrid.appendChild(card);
+  });
+
+  // ---- EXPERIENCE ----
+  const timeline = document.getElementById("timeline");
+  EXPERIENCE.forEach(item => {
+    const el = document.createElement("div");
+    el.className = "timeline__item reveal";
+    el.innerHTML = `
+      <span class="timeline__dot"></span>
+      <span class="timeline__version">${item.version}</span>
+      <div class="timeline__head">
+        <h3>${item.role}</h3>
+        <span class="timeline__period">${item.period}</span>
+      </div>
+      <div class="timeline__company">${item.company}</div>
+      <ul class="timeline__points">
+        ${item.points.map(pt => `<li>${pt}</li>`).join("")}
+      </ul>
+    `;
+    timeline.appendChild(el);
+  });
+
+  // ---- CONTACT ----
+  const contactHeaders = [
+    ["To", `<a href="mailto:${PROFILE.email}">${PROFILE.email}</a>`],
+    ["Location", PROFILE.location],
+    ["GitHub", `<a href="${PROFILE.github}" target="_blank" rel="noopener">${PROFILE.github.replace("https://", "")}</a>`],
+    ["LinkedIn", `<a href="${PROFILE.linkedin}" target="_blank" rel="noopener">${PROFILE.linkedin.replace("https://", "")}</a>`]
+  ];
+  document.getElementById("contact-headers").innerHTML = contactHeaders.map(([k, v]) =>
+    `<div class="row"><dt>${k}</dt><dd>${v}</dd></div>`
+  ).join("");
+
+  // ---- REVEAL ON SCROLL ----
+  const revealEls = document.querySelectorAll(".reveal");
+  if (reduceMotion) {
+    revealEls.forEach(el => el.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(el => observer.observe(el));
+  }
+
+  // Slight stagger for grouped items (skills, projects, timeline)
+  ["skills-groups", "projects-grid", "timeline"].forEach(id => {
+    document.querySelectorAll(`#${id} > *`).forEach((el, i) => {
+      el.style.transitionDelay = reduceMotion ? "0ms" : `${Math.min(i, 6) * 70}ms`;
+    });
+  });
+
+  // ---- COUNTERS ----
+  const counters = document.querySelectorAll(".metric__value");
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || "";
+    if (reduceMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ---- SKILL BARS ----
+  const bars = document.querySelectorAll(".skill-bar__fill");
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.level + "%";
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(b => barObserver.observe(b));
+});
+</script>
+</body>
+</html>
